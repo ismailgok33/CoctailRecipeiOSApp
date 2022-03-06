@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ECB457B327D48A3D00655DB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457B227D48A3D00655DB1 /* AppDelegate.swift */; };
-		ECB457B527D48A3D00655DB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457B427D48A3D00655DB1 /* SceneDelegate.swift */; };
-		ECB457B727D48A3D00655DB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457B627D48A3D00655DB1 /* ViewController.swift */; };
-		ECB457BA27D48A3D00655DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB457B827D48A3D00655DB1 /* Main.storyboard */; };
+		ECB457B727D48A3D00655DB1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457B627D48A3D00655DB1 /* HomeViewController.swift */; };
 		ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECB457BB27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld */; };
 		ECB457BF27D48A4000655DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB457BE27D48A4000655DB1 /* Assets.xcassets */; };
 		ECB457C227D48A4000655DB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */; };
@@ -19,9 +17,7 @@
 /* Begin PBXFileReference section */
 		ECB457AF27D48A3D00655DB1 /* CoctailRecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoctailRecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB457B227D48A3D00655DB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECB457B427D48A3D00655DB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECB457B627D48A3D00655DB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ECB457B927D48A3D00655DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECB457B627D48A3D00655DB1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECB457BC27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoctailRecipeApp.xcdatamodel; sourceTree = "<group>"; };
 		ECB457BE27D48A4000655DB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECB457C127D48A4000655DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,9 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				ECB457B227D48A3D00655DB1 /* AppDelegate.swift */,
-				ECB457B427D48A3D00655DB1 /* SceneDelegate.swift */,
-				ECB457B627D48A3D00655DB1 /* ViewController.swift */,
-				ECB457B827D48A3D00655DB1 /* Main.storyboard */,
+				ECB457B627D48A3D00655DB1 /* HomeViewController.swift */,
 				ECB457BE27D48A4000655DB1 /* Assets.xcassets */,
 				ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */,
 				ECB457C327D48A4000655DB1 /* Info.plist */,
@@ -130,7 +124,6 @@
 			files = (
 				ECB457C227D48A4000655DB1 /* LaunchScreen.storyboard in Resources */,
 				ECB457BF27D48A4000655DB1 /* Assets.xcassets in Resources */,
-				ECB457BA27D48A3D00655DB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +134,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB457B727D48A3D00655DB1 /* ViewController.swift in Sources */,
+				ECB457B727D48A3D00655DB1 /* HomeViewController.swift in Sources */,
 				ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */,
 				ECB457B327D48A3D00655DB1 /* AppDelegate.swift in Sources */,
-				ECB457B527D48A3D00655DB1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ECB457B827D48A3D00655DB1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ECB457B927D48A3D00655DB1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,9 +282,10 @@
 				INFOPLIST_FILE = CoctailRecipeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,9 +311,10 @@
 				INFOPLIST_FILE = CoctailRecipeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -23,9 +23,10 @@ class HomeViewController: UIViewController {
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 3
         layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: (view.frame.size.width / 2) - 6, height: (view.frame.size.width / 2) - 6)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         guard let collectionView = collectionView else { return }
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CoctailCollectionViewCell.self, forCellWithReuseIdentifier: CoctailCollectionViewCell.cellIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
@@ -40,10 +41,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        
-        cell.contentView.backgroundColor = .blue
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CoctailCollectionViewCell.cellIdentifier, for: indexPath) as! CoctailCollectionViewCell
+                
         return cell
     }
     

@@ -12,6 +12,8 @@
 		ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECB457BB27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld */; };
 		ECB457BF27D48A4000655DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB457BE27D48A4000655DB1 /* Assets.xcassets */; };
 		ECB457C227D48A4000655DB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */; };
+		ECB457CA27D4968300655DB1 /* CoctailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457C927D4968300655DB1 /* CoctailCollectionViewCell.swift */; };
+		ECB457CC27D497DB00655DB1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457CB27D497DB00655DB1 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		ECB457BE27D48A4000655DB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECB457C127D48A4000655DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECB457C327D48A4000655DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECB457C927D4968300655DB1 /* CoctailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECB457CB27D497DB00655DB1 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */,
 				ECB457C327D48A4000655DB1 /* Info.plist */,
 				ECB457BB27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld */,
+				ECB457C927D4968300655DB1 /* CoctailCollectionViewCell.swift */,
+				ECB457CB27D497DB00655DB1 /* Extension.swift */,
 			);
 			path = CoctailRecipeApp;
 			sourceTree = "<group>";
@@ -134,6 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB457CC27D497DB00655DB1 /* Extension.swift in Sources */,
+				ECB457CA27D4968300655DB1 /* CoctailCollectionViewCell.swift in Sources */,
 				ECB457B727D48A3D00655DB1 /* HomeViewController.swift in Sources */,
 				ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */,
 				ECB457B327D48A3D00655DB1 /* AppDelegate.swift in Sources */,

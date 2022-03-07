@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC085E7B27D5DC200016F237 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC085E7A27D5DC200016F237 /* MainTabBarController.swift */; };
+		EC085E7D27D5DD710016F237 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC085E7C27D5DD710016F237 /* CategoriesViewController.swift */; };
+		EC085E8327D5E1B80016F237 /* CocktailCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC085E8227D5E1B80016F237 /* CocktailCollectionHeader.swift */; };
 		ECB457B327D48A3D00655DB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457B227D48A3D00655DB1 /* AppDelegate.swift */; };
 		ECB457B727D48A3D00655DB1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457B627D48A3D00655DB1 /* HomeViewController.swift */; };
 		ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECB457BB27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld */; };
 		ECB457BF27D48A4000655DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB457BE27D48A4000655DB1 /* Assets.xcassets */; };
 		ECB457C227D48A4000655DB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */; };
-		ECB457CA27D4968300655DB1 /* CoctailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457C927D4968300655DB1 /* CoctailCollectionViewCell.swift */; };
+		ECB457CA27D4968300655DB1 /* CocktailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457C927D4968300655DB1 /* CocktailCollectionViewCell.swift */; };
 		ECB457CC27D497DB00655DB1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457CB27D497DB00655DB1 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC085E7A27D5DC200016F237 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		EC085E7C27D5DD710016F237 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		EC085E8227D5E1B80016F237 /* CocktailCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCollectionHeader.swift; sourceTree = "<group>"; };
 		ECB457AF27D48A3D00655DB1 /* CoctailRecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoctailRecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB457B227D48A3D00655DB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECB457B627D48A3D00655DB1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +30,7 @@
 		ECB457BE27D48A4000655DB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECB457C127D48A4000655DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECB457C327D48A4000655DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECB457C927D4968300655DB1 /* CoctailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECB457C927D4968300655DB1 /* CocktailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECB457CB27D497DB00655DB1 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,10 +45,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC085E7F27D5DEF20016F237 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC085E7A27D5DC200016F237 /* MainTabBarController.swift */,
+				ECB457B627D48A3D00655DB1 /* HomeViewController.swift */,
+				EC085E7C27D5DD710016F237 /* CategoriesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC085E8027D5DEFA0016F237 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECB457C927D4968300655DB1 /* CocktailCollectionViewCell.swift */,
+				EC085E8227D5E1B80016F237 /* CocktailCollectionHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC085E8127D5DF0A0016F237 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ECB457CB27D497DB00655DB1 /* Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		ECB457A627D48A3D00655DB1 = {
 			isa = PBXGroup;
 			children = (
 				ECB457B127D48A3D00655DB1 /* CoctailRecipeApp */,
+				ECB457B227D48A3D00655DB1 /* AppDelegate.swift */,
 				ECB457B027D48A3D00655DB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,14 +92,13 @@
 		ECB457B127D48A3D00655DB1 /* CoctailRecipeApp */ = {
 			isa = PBXGroup;
 			children = (
-				ECB457B227D48A3D00655DB1 /* AppDelegate.swift */,
-				ECB457B627D48A3D00655DB1 /* HomeViewController.swift */,
+				EC085E7F27D5DEF20016F237 /* Controller */,
+				EC085E8027D5DEFA0016F237 /* View */,
 				ECB457BE27D48A4000655DB1 /* Assets.xcassets */,
 				ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */,
 				ECB457C327D48A4000655DB1 /* Info.plist */,
 				ECB457BB27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld */,
-				ECB457C927D4968300655DB1 /* CoctailCollectionViewCell.swift */,
-				ECB457CB27D497DB00655DB1 /* Extension.swift */,
+				EC085E8127D5DF0A0016F237 /* Utils */,
 			);
 			path = CoctailRecipeApp;
 			sourceTree = "<group>";
@@ -140,10 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC085E8327D5E1B80016F237 /* CocktailCollectionHeader.swift in Sources */,
 				ECB457CC27D497DB00655DB1 /* Extension.swift in Sources */,
-				ECB457CA27D4968300655DB1 /* CoctailCollectionViewCell.swift in Sources */,
+				ECB457CA27D4968300655DB1 /* CocktailCollectionViewCell.swift in Sources */,
+				EC085E7B27D5DC200016F237 /* MainTabBarController.swift in Sources */,
 				ECB457B727D48A3D00655DB1 /* HomeViewController.swift in Sources */,
 				ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */,
+				EC085E7D27D5DD710016F237 /* CategoriesViewController.swift in Sources */,
 				ECB457B327D48A3D00655DB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

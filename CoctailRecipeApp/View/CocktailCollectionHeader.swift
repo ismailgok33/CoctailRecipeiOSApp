@@ -14,7 +14,7 @@ class CocktailCollectionHeader: UICollectionReusableView {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "30 Recipes"
+        label.text = "Popular Drinks"
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.textColor = .systemGray
         return label

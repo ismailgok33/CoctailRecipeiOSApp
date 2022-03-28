@@ -27,6 +27,7 @@ class MainTabBarController: UITabBarController {
     func configureViewControllers() {
         homeVC.title = "Home"
         let nav1 = templateNavigationController(image: UIImage(systemName: "house")!, rootController: homeVC)
+        nav1.navigationBar.prefersLargeTitles = true
         nav1.tabBarItem.title = "Home"
         
         categoriesVC.title = "Categories"

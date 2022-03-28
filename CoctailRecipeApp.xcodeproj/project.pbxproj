@@ -10,6 +10,11 @@
 		EC085E7B27D5DC200016F237 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC085E7A27D5DC200016F237 /* MainTabBarController.swift */; };
 		EC085E7D27D5DD710016F237 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC085E7C27D5DD710016F237 /* CategoriesViewController.swift */; };
 		EC085E8327D5E1B80016F237 /* CocktailCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC085E8227D5E1B80016F237 /* CocktailCollectionHeader.swift */; };
+		EC87CD4727D8795F00E42990 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87CD4627D8795F00E42990 /* APIController.swift */; };
+		EC87CD4B27D88D5B00E42990 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87CD4A27D88D5B00E42990 /* Cocktail.swift */; };
+		EC87CD4D27D8911700E42990 /* CocktailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87CD4C27D8911700E42990 /* CocktailViewModel.swift */; };
+		EC9CA70927F170700037E338 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EC9CA70827F170700037E338 /* Kingfisher */; };
+		EC9CA70B27F1749C0037E338 /* CocktailDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9CA70A27F1749C0037E338 /* CocktailDetailsViewController.swift */; };
 		ECB457B327D48A3D00655DB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457B227D48A3D00655DB1 /* AppDelegate.swift */; };
 		ECB457B727D48A3D00655DB1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457B627D48A3D00655DB1 /* HomeViewController.swift */; };
 		ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECB457BB27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld */; };
@@ -23,6 +28,10 @@
 		EC085E7A27D5DC200016F237 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		EC085E7C27D5DD710016F237 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		EC085E8227D5E1B80016F237 /* CocktailCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCollectionHeader.swift; sourceTree = "<group>"; };
+		EC87CD4627D8795F00E42990 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		EC87CD4A27D88D5B00E42990 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		EC87CD4C27D8911700E42990 /* CocktailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailViewModel.swift; sourceTree = "<group>"; };
+		EC9CA70A27F1749C0037E338 /* CocktailDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDetailsViewController.swift; sourceTree = "<group>"; };
 		ECB457AF27D48A3D00655DB1 /* CoctailRecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoctailRecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB457B227D48A3D00655DB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECB457B627D48A3D00655DB1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9CA70927F170700037E338 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +61,7 @@
 				EC085E7A27D5DC200016F237 /* MainTabBarController.swift */,
 				ECB457B627D48A3D00655DB1 /* HomeViewController.swift */,
 				EC085E7C27D5DD710016F237 /* CategoriesViewController.swift */,
+				EC9CA70A27F1749C0037E338 /* CocktailDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -70,6 +81,30 @@
 				ECB457CB27D497DB00655DB1 /* Extension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EC87CD4527D8795000E42990 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EC87CD4627D8795F00E42990 /* APIController.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		EC87CD4827D88D4200E42990 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC87CD4A27D88D5B00E42990 /* Cocktail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC87CD4927D88D4800E42990 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC87CD4C27D8911700E42990 /* CocktailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		ECB457A627D48A3D00655DB1 = {
@@ -92,13 +127,16 @@
 		ECB457B127D48A3D00655DB1 /* CoctailRecipeApp */ = {
 			isa = PBXGroup;
 			children = (
+				EC87CD4927D88D4800E42990 /* ViewModel */,
+				EC87CD4827D88D4200E42990 /* Model */,
+				EC87CD4527D8795000E42990 /* API */,
 				EC085E7F27D5DEF20016F237 /* Controller */,
 				EC085E8027D5DEFA0016F237 /* View */,
+				EC085E8127D5DF0A0016F237 /* Utils */,
 				ECB457BE27D48A4000655DB1 /* Assets.xcassets */,
 				ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */,
 				ECB457C327D48A4000655DB1 /* Info.plist */,
 				ECB457BB27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld */,
-				EC085E8127D5DF0A0016F237 /* Utils */,
 			);
 			path = CoctailRecipeApp;
 			sourceTree = "<group>";
@@ -119,6 +157,9 @@
 			dependencies = (
 			);
 			name = CoctailRecipeApp;
+			packageProductDependencies = (
+				EC9CA70827F170700037E338 /* Kingfisher */,
+			);
 			productName = CoctailRecipeApp;
 			productReference = ECB457AF27D48A3D00655DB1 /* CoctailRecipeApp.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +188,9 @@
 				Base,
 			);
 			mainGroup = ECB457A627D48A3D00655DB1;
+			packageReferences = (
+				EC9CA70727F170700037E338 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = ECB457B027D48A3D00655DB1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,13 +218,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC085E8327D5E1B80016F237 /* CocktailCollectionHeader.swift in Sources */,
+				EC87CD4D27D8911700E42990 /* CocktailViewModel.swift in Sources */,
 				ECB457CC27D497DB00655DB1 /* Extension.swift in Sources */,
 				ECB457CA27D4968300655DB1 /* CocktailCollectionViewCell.swift in Sources */,
+				EC87CD4B27D88D5B00E42990 /* Cocktail.swift in Sources */,
 				EC085E7B27D5DC200016F237 /* MainTabBarController.swift in Sources */,
 				ECB457B727D48A3D00655DB1 /* HomeViewController.swift in Sources */,
 				ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */,
 				EC085E7D27D5DD710016F237 /* CategoriesViewController.swift in Sources */,
+				EC9CA70B27F1749C0037E338 /* CocktailDetailsViewController.swift in Sources */,
 				ECB457B327D48A3D00655DB1 /* AppDelegate.swift in Sources */,
+				EC87CD4727D8795F00E42990 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC9CA70727F170700037E338 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC9CA70827F170700037E338 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC9CA70727F170700037E338 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		ECB457BB27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld */ = {

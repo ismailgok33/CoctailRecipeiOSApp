@@ -9,9 +9,11 @@ import UIKit
 
 class CocktailCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    
     static let cellIdentifier = "coctailCell"
     
-    private let imageView: UIImageView = {
+    let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "coctail_1")
 //        imageView.setDimensions(height: 150, width: 150)
@@ -19,10 +21,15 @@ class CocktailCollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 30
         imageView.clipsToBounds = true
 //        imageView.layer.masksToBounds = true
+        
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+//        imageView.isUserInteractionEnabled = true
+//        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
         return imageView
     }()
     
-    private let labelView: UILabel = {
+    let labelView: UILabel = {
         let label = UILabel()
         label.text = "Whiskey Smash"
         label.numberOfLines = 2
@@ -34,6 +41,8 @@ class CocktailCollectionViewCell: UICollectionViewCell {
     
     
     private let gradientLayer = CAGradientLayer()
+    
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,6 +67,8 @@ class CocktailCollectionViewCell: UICollectionViewCell {
         labelView.anchor(left: contentView.leftAnchor, bottom: contentView.bottomAnchor, right: contentView.rightAnchor, paddingLeft: 16, paddingBottom: 8, paddingRight: 16)
     }
     
+    // MARK: - Helpers
+    
     func createImageOverlay() {
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer.locations = [0.5, 1.1]
@@ -65,6 +76,11 @@ class CocktailCollectionViewCell: UICollectionViewCell {
         gradientLayer.masksToBounds = true
         contentView.layer.addSublayer(gradientLayer)
     }
+    
+//    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+//        let detailVC = CoctailDetailsViewController()
+//        
+//    }
     
 }
 

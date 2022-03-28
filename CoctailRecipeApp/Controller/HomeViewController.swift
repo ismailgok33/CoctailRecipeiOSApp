@@ -6,16 +6,30 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
     
     var collectionView: UICollectionView?
+    
+    private var cocktailViewModel: CocktailViewModel!
+    
+    private var cocktails = [Cocktail]() {
+        didSet {
+            print("DEBUG: Cocktails are set: \(cocktails)")
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemGray6
         setUpCollectionView()
+//        getAllCocktailsFromViewModel()
+        fetchAllCocktails()
     }
     
     func setUpCollectionView() {
@@ -23,28 +37,57 @@ class HomeViewController: UIViewController {
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 2
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: (view.frame.size.width / 2) - 24, height: (view.frame.size.width / 2) + 30)
+        layout.itemSize = CGSize(width: (view.frame.size.width / 2) - 36, height: (view.frame.size.width / 2) + 30)
+        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         guard let collectionView = collectionView else { return }
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.register(CocktailCollectionViewCell.self, forCellWithReuseIdentifier: CocktailCollectionViewCell.cellIdentifier)
         collectionView.register(CocktailCollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CocktailCollectionHeader.headerReuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
         
-        collectionView.fillSuperview(padding: UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16))
+        collectionView.fillSuperview(padding: UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24))
         collectionView.backgroundColor = .systemGray6
+    }
+    
+    func getAllCocktailsFromViewModel() {
+        cocktailViewModel = CocktailViewModel()
+        cocktailViewModel.fetchAllCocktails()
+        print("DEBUG: allCocktails are \(cocktailViewModel.allCocktails)")
+        self.cocktails = cocktailViewModel.allCocktails
+    }
+    
+    func fetchAllCocktails() {
+        URLSession.shared.request(url: URL(string: APIController.searchByName), expecting: CocktailResponse.self) { [weak self] result in
+            switch result {
+            case .success(let cocktails):
+                self?.cocktails = cocktails.drinks
+                print("DEBUG: coctails are \(cocktails)")
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return cocktails.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CocktailCollectionViewCell.cellIdentifier, for: indexPath) as! CocktailCollectionViewCell
+        
+        let cocktail = cocktails[indexPath.row]
+        cell.labelView.text = cocktail.name
+        
+        if let url = URL(string: cocktail.imageSource) {
+            cell.imageView.kf.setImage(with: url)
+        }
+        
         
         return cell
     }
@@ -58,6 +101,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.size.width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cocktail = cocktails[indexPath.row]
+        
+        let detailVC = CocktailDetailsViewController()
+        detailVC.cocktail = cocktail
+        detailVC.modalPresentationStyle = .fullScreen
+        
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     

@@ -12,7 +12,14 @@ class CocktailDetailsViewController: UIViewController {
     
     // MARK: - Properties
     
-    var cocktail: Cocktail?
+    var cocktail: Cocktail? = nil
+    var viewModel: CocktailViewModel? = nil
+    
+    private let scrollView: UIScrollView = {
+       let sv = UIScrollView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
@@ -39,12 +46,30 @@ class CocktailDetailsViewController: UIViewController {
         return label
     }()
     
-    private let ingredientsTextView: UITextView = {
+    lazy var ingredientsTextView: UITextView = {
         let tv = UITextView()
-        tv.font = UIFont.systemFont(ofSize: 16)
-        tv.textColor = .black
+        tv.font = UIFont(name: "Verdana", size: 18)
+//        tv.textColor = .black
         tv.textAlignment = .left
+        tv.isEditable = false
+        tv.isScrollEnabled = false
+        tv.contentInsetAdjustmentBehavior = .automatic
         return tv
+    }()
+    
+    private let ingredientsHeaderLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        label.text = "Instructions"
+        return label
+    }()
+    
+    private let instructionsLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Verdana", size: 18)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
     }()
     
     
@@ -54,19 +79,29 @@ class CocktailDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+//        navigationController?.navigationBar.prefersLargeTitles = false
         
         configureUI()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        scrollView.fillSuperview()
+        
+//        imageView.setDimensions(height: 300, width: UIScreen.main.bounds.width)
         imageView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 20, paddingRight: 0, height: 300)
-        
+
         cocktailNameLabel.anchor(top: imageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 24, paddingLeft: 12, paddingBottom: 12, paddingRight: 12)
-        
+
         ingredientsLabel.anchor(top: cocktailNameLabel.bottomAnchor, left: view.leftAnchor, paddingTop: 24, paddingLeft: 12, paddingBottom: 12)
+
+        ingredientsTextView.anchor(top: ingredientsLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 12, paddingBottom: 12, paddingRight: 12)
         
-        ingredientsTextView.anchor(top: ingredientsLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 24, paddingLeft: 12, paddingBottom: 12, paddingRight: 12)
+        ingredientsHeaderLabel.anchor(top: ingredientsTextView.bottomAnchor, left: view.leftAnchor, paddingTop: 12, paddingLeft: 12, paddingBottom: 0)
+        
+        instructionsLabel.anchor(top: ingredientsHeaderLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 12)
+        
     }
     
     // MARK: - Helpers
@@ -80,12 +115,27 @@ class CocktailDetailsViewController: UIViewController {
         }
         
         cocktailNameLabel.text = cocktail?.name
-        ingredientsTextView.text = "- \(cocktail?.ingredient1) \n - \(cocktail?.ingredient2) \n - \(cocktail?.ingredient3) \n - \(cocktail?.ingredient4) \n - \(cocktail?.ingredient5) \n"
+        if let viewModel = viewModel {
+            ingredientsTextView.attributedText = viewModel.ingredients
+        }
+        instructionsLabel.text = cocktail?.instructions ?? "No instructions"
         
-        view.addSubview(imageView)
-        view.addSubview(cocktailNameLabel)
-        view.addSubview(ingredientsLabel)
-        view.addSubview(ingredientsTextView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(imageView)
+        scrollView.addSubview(cocktailNameLabel)
+        scrollView.addSubview(ingredientsLabel)
+        scrollView.addSubview(ingredientsTextView)
+        scrollView.addSubview(ingredientsHeaderLabel)
+        scrollView.addSubview(instructionsLabel)
+        
+//        let stack = UIStackView(arrangedSubviews: [imageView, cocktailNameLabel, ingredientsLabel, ingredientsTextView])
+//        stack.axis = .vertical
+//        stack.alignment = .leading
+//        stack.spacing = 10
+//        stack.distribution = .fillProportionally
+        
+//        view.addSubview(stack)
+//        stack.fillSuperview()
     }
     
     

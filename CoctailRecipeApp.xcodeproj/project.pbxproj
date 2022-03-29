@@ -22,6 +22,7 @@
 		ECB457C227D48A4000655DB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB457C027D48A4000655DB1 /* LaunchScreen.storyboard */; };
 		ECB457CA27D4968300655DB1 /* CocktailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457C927D4968300655DB1 /* CocktailCollectionViewCell.swift */; };
 		ECB457CC27D497DB00655DB1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB457CB27D497DB00655DB1 /* Extension.swift */; };
+		ECFFC46C27F28B6D00847CBF /* DynamicTextViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFC46B27F28B6D00847CBF /* DynamicTextViewSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		ECB457C327D48A4000655DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECB457C927D4968300655DB1 /* CocktailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECB457CB27D497DB00655DB1 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		ECFFC46B27F28B6D00847CBF /* DynamicTextViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextViewSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				ECB457C927D4968300655DB1 /* CocktailCollectionViewCell.swift */,
 				EC085E8227D5E1B80016F237 /* CocktailCollectionHeader.swift */,
+				ECFFC46B27F28B6D00847CBF /* DynamicTextViewSize.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				ECB457CA27D4968300655DB1 /* CocktailCollectionViewCell.swift in Sources */,
 				EC87CD4B27D88D5B00E42990 /* Cocktail.swift in Sources */,
 				EC085E7B27D5DC200016F237 /* MainTabBarController.swift in Sources */,
+				ECFFC46C27F28B6D00847CBF /* DynamicTextViewSize.swift in Sources */,
 				ECB457B727D48A3D00655DB1 /* HomeViewController.swift in Sources */,
 				ECB457BD27D48A3D00655DB1 /* CoctailRecipeApp.xcdatamodeld in Sources */,
 				EC085E7D27D5DD710016F237 /* CategoriesViewController.swift in Sources */,

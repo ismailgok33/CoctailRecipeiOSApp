@@ -10,18 +10,21 @@ import Kingfisher
 
 class HomeViewController: UIViewController {
     
+    // MARK: - Properties
+    
     var collectionView: UICollectionView?
     
     private var cocktailViewModel: CocktailViewModel!
     
     private var cocktails = [Cocktail]() {
         didSet {
-            print("DEBUG: Cocktails are set: \(cocktails)")
             DispatchQueue.main.async {
                 self.collectionView?.reloadData()
             }
         }
     }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,15 @@ class HomeViewController: UIViewController {
 //        getAllCocktailsFromViewModel()
         fetchAllCocktails()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.tintColor = .label
+//        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    // MARK: - Helpers
     
     func setUpCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -52,19 +64,18 @@ class HomeViewController: UIViewController {
         collectionView.backgroundColor = .systemGray6
     }
     
-    func getAllCocktailsFromViewModel() {
-        cocktailViewModel = CocktailViewModel()
-        cocktailViewModel.fetchAllCocktails()
-        print("DEBUG: allCocktails are \(cocktailViewModel.allCocktails)")
-        self.cocktails = cocktailViewModel.allCocktails
-    }
+//    func getAllCocktailsFromViewModel() {
+//        cocktailViewModel = CocktailViewModel()
+//        cocktailViewModel.fetchAllCocktails()
+//        print("DEBUG: allCocktails are \(cocktailViewModel.allCocktails)")
+//        self.cocktails = cocktailViewModel.allCocktails
+//    }
     
     func fetchAllCocktails() {
         URLSession.shared.request(url: URL(string: APIController.searchByName), expecting: CocktailResponse.self) { [weak self] result in
             switch result {
             case .success(let cocktails):
                 self?.cocktails = cocktails.drinks
-                print("DEBUG: coctails are \(cocktails)")
             case .failure(let error):
                 print(error)
             }
@@ -73,7 +84,10 @@ class HomeViewController: UIViewController {
     
 }
 
+// MARK: - CollectionView Extension
+
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cocktails.count
     }
@@ -107,7 +121,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cocktail = cocktails[indexPath.row]
         
         let detailVC = CocktailDetailsViewController()
+        detailVC.viewModel = CocktailViewModel(cocktail: cocktail)
         detailVC.cocktail = cocktail
+//        detailVC.title = cocktail.name
         detailVC.modalPresentationStyle = .fullScreen
         
         navigationController?.pushViewController(detailVC, animated: true)
